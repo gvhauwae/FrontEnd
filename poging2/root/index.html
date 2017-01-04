@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script>
+        $(function(){
+            var app = angular.module('myapp',[]);
+            app.controller('myctrl',function($scope,$http){
+                $http({method:'GET', url:'connectdb.php'}).success(function(response){
+                    $scope.names = response;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="search">
+        <input id="field" type="text">
+        <input type="button">
+    </div>
+
+
+    <div>
+        <table  ng-app="myapp" ng-controller="myctrl" >
+            <tr ng-repeat="x in plaatsen">
+                <td> {{ x.id }} </td>
+                <td>{{ x.title }}</td>
+                <td>{{ x.description }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="plaatsenApp" ng-controller="plaatsencontroller">
+    <ul><li ng-repeat="x in plaatsen" value="{{x.id}}">{{x.Titel}}</li></ul>
+    <script>
+        var app=angular.module('plaatsenApp',[]);
+        app.controller('plaatsencontroller',['$scope','http',function($scope,$http){
+            $http.get("connectdb.php").succes(function(response){$scope.plaatsen=response;});
+        }]);
+    </script>
+</div>
+</body>
+</html>

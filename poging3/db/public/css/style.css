@@ -1,0 +1,13 @@
+/*index*/
+body{
+	background-image: url(../img/typewriter-801921_1920.jpg);
+}
+
+#search{
+	margin-left: 25%;
+	margin-top: 25%;
+
+}
+#field{
+	width: 50%;
+}

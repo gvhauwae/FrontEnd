@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.13.4",
+    "gulp-jshint": "^2.0.4",
+    "mssql": "^3.3.0",
+    "mysql": "^2.10.2",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {
+    "gulp-inject": "^4.2.0",
+    "gulp-nodemon": "^2.2.1",
+    "wiredep": "^4.0.0"
+  }
+}
