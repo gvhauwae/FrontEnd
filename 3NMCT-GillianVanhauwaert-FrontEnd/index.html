@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" href="img/favicon_black.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Outer space</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--inject:css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--endinject-->
+    <!--inject:js-->
+    <script src="js/searchbox.js"></script>
+    <!--endinject-->
+
+
+</head>
+<body ng-app="mainApp">
+    <header id="header">
+        <a href="index.html"><img src="img/logo_wit_full.png" alt=""></a>
+        <p id="info">uw advertentie hier? <a href="mailto:test@test.be">&#9993;</a></p>
+    </header>
+    <div ng-controller="places as placesCtrl" ng-init="showData()">
+        <div id="search">
+            Ik zoek
+            <input id="field" type="text" ng-model="searchBox" oninput="goUp()" placeholder="plaats, postcode of zoekopdracht">
+
+            <!--<input type="button">-->
+        </div>
+        <ul ng-controller="PanelController as panel" id="placesData">
+
+            <li ng-class="{ active: panel.isSelected(1)}" ng-show="panel.isSelected(1)">
+                <h1>Maak uw selectie uit onderstaande plaatsen:</h1>
+                <div id="results">
+                    <ul>
+                        <li ng-repeat="datalist in placesCtrl.datalists | filter:searchBox">
+                            <h2>
+                                <a href="" data-ng-bind="datalist.place + '  -  ' + datalist.title" ng-click="panel.selectTab(2, datalist)"></a>
+                            </h2>
+                            <p id="description">{{datalist.description}}</p>
+                            <p>
+                                <a href="" data-ng-bind="'meer weten....'" ng-click="panel.selectTab(2, datalist)"></a>
+                            </p>
+                            <hr>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li id="details" ng-class="{ active: panel.isSelected(2)}" ng-show="panel.isSelected(2)">
+                <h2>{{panel.datalist.title}} - {{panel.datalist.place}}</h2>
+                <p>{{panel.datalist.description}}</p>
+                <h3>{{panel.datalist.price}} /week</h3>
+                <a href="" ng-click="panel.selectTab(1)">&larr; Back to all results</a>
+                <ul id="link">
+                    <li><a href="mailto:test@test.be">&#9993;</a></li>
+                    <li><a href="http://www.google.be"><img src="img/home.png" height="30px" alt=""></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<footer id="footer">
+
+    <p>&copy; gillian vanhauwaert</p>
+</footer>
+</body>
+</html>

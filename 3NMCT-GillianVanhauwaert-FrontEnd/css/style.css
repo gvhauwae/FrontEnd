@@ -1,0 +1,174 @@
+/*index 1*/
+
+body{
+	background-image: url(../img/typewriter-801921_1920.jpg);
+	overflow: hidden;
+}
+body{
+	font-family: Ubuntu;
+	color:white;
+}
+#info{
+	text-align: right;
+	padding-right: 30px;
+	margin-top: -85px;
+	padding-bottom: 35px;
+}
+#info a{
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
+	text-align: right;
+	padding-left: 20px;
+
+}
+#header{
+	background: rgba(0,0,0, 0.3);
+	margin:-10px;
+}
+#footer{
+	text-align: right;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	padding: 5px;
+	color: black;
+	font-size: 0.8em;
+	margin-right: 10px;
+}
+
+#search{
+	margin-left: 0%;
+	margin-top: 18%;
+	background: rgba(0,0,0, 0.3);
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom:15px;
+	color: white;
+	font-family: Ubuntu;
+
+}
+
+#field{
+	width: 50%;
+	margin-left: 10px;
+}
+
+#placesData{
+	visibility: hidden;
+	list-style:none;
+}
+
+#results, #details{
+	background: rgba(0,0,0, 0.3);
+	margin-left: 20%;
+	margin-right: 20%;
+
+}
+h1{
+	margin-left: 20%;
+	color: white;
+}
+
+#results li{
+	list-style: none;
+
+}
+#results{
+	overflow:scroll;
+	height:500px;
+}
+
+#results h2 a, #results p a, #details h2, #details a{
+	color: white;
+	text-decoration: none;
+}
+
+#results ul{
+	padding-top: 10px;
+	padding-right: 5%;
+}
+
+#description{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 16px;     /* fallback */
+	max-height: 80px;      /* fallback */
+	-webkit-line-clamp: 5; /* number of lines to show */
+	-webkit-box-orient: vertical;
+	color:white;
+}
+
+/*page2*/
+#details{
+	padding-top:10px;
+	padding-left: 5%;
+	padding-right:5%;
+	padding-bottom: 50px;
+}
+
+#link{
+	text-align: right;
+	margin-top:-50px;
+}
+#link li{
+	text-decoration: none;
+	display: inline;
+	font-size: 2em;
+}
+
+/* webkit scrollbar */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(255,255,255,0.8);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,0.8);
+}
+
+/*mobile*/
+@media screen and (max-width: 480px) {
+	#header {
+		text-align: center;
+	}
+
+	#results, #details {
+		margin-left: 2%;
+		margin-right: 5%;
+	}
+
+	#placesData h1 {
+		font-size: 1em;
+		margin-left: 2%;
+	}
+
+	#details {
+		height: 400px;
+		padding-bottom: 100px;
+		overflow:scroll;
+	}
+	#footer{
+		visibility: hidden;
+	}
+	#info{
+		position: fixed;
+		left: 25%;
+		bottom: 0px;
+		padding: 5px;
+	}
+
+}
